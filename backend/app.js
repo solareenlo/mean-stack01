@@ -23,7 +23,7 @@ app.post('/api/posts', (req, res, next) => {
   const post = req.body;
   console.log(post);
   res.status(201).json({
-    message: 'Postに成功しました.'
+    message: 'Post success'
   });
 });
 
@@ -41,7 +41,7 @@ app.get('/api/posts', (req, res, next) => {
     }
   ];
   res.status(200).json({
-    message: 'フェッチに成功！',
+    message: 'fetch success',
     posts: posts
   });
 });
