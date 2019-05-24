@@ -13,7 +13,7 @@ export class PostsService {
   constructor(private http: HttpClient) {}
 
   getPosts() {
-    this.http.get<{message: string, posts: Post[]}>('http://localhost:3005/api/posts')
+    this.http.get<{message: string, posts: Post[]}>('http://nodeangular2-env.bfw2p9gwzc.us-east-2.elasticbeanstalk.com/api/posts')
       .subscribe((postData) => {
         this.posts = postData.posts;
         this.postsUpdated.next([...this.posts]);
@@ -27,7 +27,7 @@ export class PostsService {
   addPost(title: string, content: string) {
     const post: Post = {id: null, title, content};
     this.http
-      .post<{message: string}>('http://localhost:3005/api/posts', post)
+      .post<{message: string}>('http://nodeangular2-env.bfw2p9gwzc.us-east-2.elasticbeanstalk.com/api/posts', post)
       .subscribe((responseData) => {
         this.posts.push(post);
         this.postsUpdated.next([...this.posts]);
