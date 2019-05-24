@@ -1,0 +1,33 @@
+<mat-card>
+  <form (submit)="onAddPost(postForm)" #postForm="ngForm">
+    <mat-form-field>
+      <input
+      matInput
+      type="text"
+      name="title"
+      ngModel
+      required
+      minlength="3"
+      placeholder="タイトル"
+      #title="ngModel">
+      <mat-error *ngIf="title.invalid">タイトルを入力してください.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea
+        matInput
+        rows="4"
+        name="content"
+        ngModel
+        required
+        placeholder="メッセージ"
+        #content="ngModel"></textarea>
+      <mat-error *ngIf="content.invalid">メッセージを入力してください.</mat-error>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit">
+      保存
+    </button>
+  </form>
+</mat-card>

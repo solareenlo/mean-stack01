@@ -1,0 +1,10 @@
+version: "3"
+services:
+  angular:
+    image: solareenlo/angular-cli
+    build: .
+    command: ash -c "ng serve --host=0.0.0.0"
+    volumes:
+      - .:/app
+    ports:
+      - "4207:4200"
